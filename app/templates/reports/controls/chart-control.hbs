@@ -1,0 +1,5 @@
+{{#each control in parentController.chartControls }}
+    {{#link-to control.route (query-params chart=control.chartParameter )}}
+        <i class="fa {{ control.chartIcon }}"></i>
+    {{/link-to}}
+{{/each}}

@@ -1,0 +1,9 @@
+<div class="small-10 small-offset-1 columns text-center">
+
+    {{#if chart-control }}
+        {{ view 'reports/chart-control' templateName=chart-control }}
+    {{/if}}
+
+    <canvas style="display:none;" id="bar-chart-widget" class="mt-15 mb" width="300" height="200"></canvas>
+    <canvas style="display:none;" id="pie-chart-widget" class="mt-15 mb" width="300" height="200"></canvas>
+</div>

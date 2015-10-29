@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="small-12 columns">
+        <form>
+            <div class="row">
+                <div class="small-12 columns">
+                    <label>Selected Carrier
+                        <input type="text" value="{{carrier.name}}" disabled="disabled">
+                    </label>
+                </div>
+            </div>
+
+            {{#if isInsurance }}
+                <div class="row">
+                    <div class="small-12 columns">
+                        <label>Plan Type
+                            <p class="help-text">This is the type of plan shown on your insurance card.</p>
+                            {{input id='plan_type' value=plan_type placeholder="i.e. PPO Corp Premier"}}
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-12 columns">
+                        <label>Group Number
+                            <p class="help-text">The group identifier shown on your insurance card.</p>
+                            {{input id='group_number' value=group_number placeholder="i.e. 0987375393-23"}}
+                        </label>
+                    </div>
+                </div>
+            {{ else }}
+                <div class="row">
+                    <div class="small-12 columns">
+                        <label>Username
+                            <p class="help-text"></p>
+                            {{input id='account_username' value=account_username placeholder=carrier.type.usernamePlaceholder }}
+                        </label>
+                    </div>
+                </div>
+            {{/if}}
+
+
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="small-12 columns">
+        <div class="buttons">
+            <a href="#"  {{ action "saveForm" }}class="button round expand"><i class="fa fa-plus fa-fw text-left"></i>Add Account</a>
+        </div>
+    </div>
+</div>

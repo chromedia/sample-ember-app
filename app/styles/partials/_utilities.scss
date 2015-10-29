@@ -1,0 +1,58 @@
+.cover-wrapper {
+	margin-top: 10rem;
+	margin-bottom: 10rem;
+}
+
+.tall-wrapper {
+	margin-top: 6.25rem;
+	margin-bottom: 6.25rem;
+}
+
+.wrapper {
+	margin-top: 3.75rem;
+	margin-bottom: 3.75rem;
+}
+
+.short-wrapper {
+	margin-top: 1.25rem;
+	margin-bottom: 1.25rem;
+}
+
+.mt {
+	margin-top: 1.875rem;
+}
+
+.mb {
+	margin-bottom: 1.875rem;
+}
+
+.mt-15 {
+	margin-top: 1.25rem;
+}
+
+.mb-15 {
+	margin-bottom: 1.25rem;
+}
+
+.table {
+	display: table;
+}
+
+.table-cell {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.truncate {
+  	white-space: nowrap;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+}
+
+.subtext {
+	color: rgba(0, 0, 0, $B-subtext);
+}
+
+.text-uppercase {
+	text-transform: uppercase;
+}

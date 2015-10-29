@@ -1,0 +1,18 @@
+{{#app-canvas}}
+    <div class="inner-wrap">
+        <!-- OFF CANVAS MENU BAR -->
+        {{ top-navigation title="Overview" leftWidget="controls/side-menu-trigger"  }}
+        <!-- END NAV.TAB-BAR HIDE-FOR-LARGE-UP -->
+
+        {{side-menu}}
+
+        <section class="main-section">
+            hi {{  user.current.email }}
+        </section>
+
+        {{ bottom-navigation }}
+
+        <!-- CLOSE THE OFF-CANVAS MENU -->
+        <a class="exit-off-canvas"></a>
+    </div>
+{{/app-canvas}}

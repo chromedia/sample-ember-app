@@ -1,0 +1,42 @@
+{{#app-canvas}}
+    <div class="inner-wrap">
+        <!-- OFF CANVAS MENU BAR -->
+        {{ top-navigation title="Add Account"  leftWidget='accounts/controls/back-to-types' }}
+        <!-- END NAV.TAB-BAR HIDE-FOR-LARGE-UP -->
+
+        {{side-menu}}
+
+        <section class="main-section">
+            <div class="row mt">
+                <div class="small-12 columns">
+
+                    {{ accounts/search-form active-carrier-type=targetType parentController=controller }}
+
+                    <div class="row">
+   
+                            <h5 class="small indent subheader">Popular Providers</h5>
+
+                            <ul class="blocked-list">
+                                {{#each filteredContent as |item|}}
+                                    <li>
+                                        {{#link-to 'accounts.add-carrier' item}}
+                                            {{item.name}} <i class="fa fa-angle-right fa-lg fa-fw right"></i>
+                                        {{/link-to}}
+                                    </li>
+                                {{/each}}
+                            </ul>
+
+                     </div>
+                </div>
+            </div>
+        </section>
+
+
+        {{ bottom-navigation }}
+
+        <!-- CLOSE THE OFF-CANVAS MENU -->
+        <a class="exit-off-canvas"></a>
+    </div>
+
+    {{ partial "accounts/controls/modal-camera"}}
+{{/app-canvas}}

@@ -1,0 +1,7 @@
+{{#each carriers as |item|}}
+    <li>
+        {{#link-to 'index' item}}
+            {{item.name}} <i class="fa fa-angle-right fa-lg fa-fw right"></i>
+        {{/link-to}}
+    </li>
+{{/each}}

@@ -1,0 +1,41 @@
+{{#app-canvas}}
+    <div class="inner-wrap">
+        <!-- OFF CANVAS MENU BAR -->
+        {{ top-navigation title=title leftWidget="controls/back-button" back-to-route=backButtonRoute }}
+        <!-- END NAV.TAB-BAR HIDE-FOR-LARGE-UP -->
+
+        {{side-menu}}
+
+        <section class="main-section">
+
+            <div class="row">
+                <div class="small-12 columns">
+
+                    {{ partial "reports/controls/overview-filters" }}
+
+                    <div class="row">
+                        <div class="tabs-content">
+                            <div class="content active">
+
+                                <div class="row">
+                                    <div class="small-12 columns">
+                                        {{ partial "reports/controls/claims-list" }}
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        {{ bottom-navigation }}
+
+        <!-- CLOSE THE OFF-CANVAS MENU -->
+        <a class="exit-off-canvas"></a>
+    </div>
+
+    {{ modals/close-overview-tour action="disableOverviewTour" }}
+{{/app-canvas}}

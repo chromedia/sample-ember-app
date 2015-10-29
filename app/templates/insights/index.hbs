@@ -1,0 +1,45 @@
+{{#app-canvas}}
+    <div class="inner-wrap">
+        <!-- OFF CANVAS MENU BAR -->
+        {{ top-navigation title="Insights" leftWidget="controls/side-menu-trigger"  }}
+        <!-- END NAV.TAB-BAR HIDE-FOR-LARGE-UP -->
+
+        {{side-menu}}
+
+        <section class="main-section">
+            <div class="row">
+                <div class="small-12 columns">
+
+                   
+
+                    {{#each model as |item|}}
+                        {{ insights/list-item insight=item }}
+                    {{else}}
+                        <div class="row">
+                            <div class="small-10 small-offset-1 columns">
+                                <div class="wrapper text-center">
+                                    <h4>Oops! No insights yet.</h4>
+                                    <h6 class="subheader">Lorem ipsum dolor</h6>
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
+
+
+                </div>
+            </div>
+        </section>
+
+        {{ bottom-navigation parentController=controller  }}
+
+        <!-- CLOSE THE OFF-CANVAS MENU -->
+        <a class="exit-off-canvas"></a>
+    </div>
+
+    <div id="insight-modal" class="reveal-modal" data-reveal aria-labelledby="insight-modal" aria-hidden="true" role="dialog">
+        <h4 class="modal-title text-center"></h4>
+        <p class="modal-content text-center"></p>
+        <a class="button small round expand close-reveal-modal" aria-label="Close">Ok Got It!</a>
+        {{!-- <a class="close-reveal-modal" aria-label="Close"><i class="fa fa-remove fa-fw"></i></a> --}}
+    </div>
+{{/app-canvas}}

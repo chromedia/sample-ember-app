@@ -1,0 +1,75 @@
+{{#app-canvas}}
+    <div class="inner-wrap">
+        <!-- OFF CANVAS MENU BAR -->
+        {{ top-navigation title="Overview" leftWidget="controls/side-menu-trigger"  }}
+        <!-- END NAV.TAB-BAR HIDE-FOR-LARGE-UP -->
+
+        {{side-menu}}
+
+        <section class="main-section">
+
+            <div class="row">
+                <div class="small-12 columns">
+
+                    {{ partial "reports/controls/overview-filters" }}
+
+
+                    <div class="row">
+                        <div class="tabs-content">
+                            <div class="content active" >
+
+                                <!-- insert chart here -->
+                                {{ reports/full-overview-chart chart-type=chart chart-data=chartData chart-control="reports/controls/chart-control" parentController=controller }}
+
+                                <div class="row">
+                                    <div class="small-12 columns">
+
+                                        <ul class="list-view">
+                                            {{#each breakdownData in modelData.data }}
+                                                <li class="list-view-cell">
+                                                    <div class="row">
+                                                        <div class="small-6 columns">
+                                                            {{ reports/color-indicator background-color=breakdownData.color }}
+                                                            <span class="subtle title">
+                                                                {{ breakdownData.title }}
+                                                            </span>
+                                                        </div>
+                                                        <div class="small-6 columns">
+                                                            <ul class="table">
+                                                                <li class="table-cell text-right">${{ currency-format breakdownData.value }}</li>
+                                                                <li class="table-cell text-center subtext">{{ breakdownData.percentage }}%</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="small-6 small-offset-6 columns">
+                                                            {{#link-to "reports.breakdown" (query-params period=period type=breakdownData.type dependent=dependent expenseType=expenseType) class="button inverse subtle small round expand" }}
+                                                                View Breakdown
+                                                            {{/link-to}}
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                            {{/each}}
+
+                                        </ul>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {{ bottom-navigation }}
+
+        <!-- CLOSE THE OFF-CANVAS MENU -->
+        <a class="exit-off-canvas"></a>
+    </div>
+
+    {{ modals/close-overview-tour action="disableOverviewTour" }}
+
+{{/app-canvas}}

@@ -1,0 +1,51 @@
+<div class="row">
+
+    <ul class="tabs justified">
+        {{#each periodFilter in periodFilters }}
+            {{# view "tab-link" current-tab=period target-tab=periodFilter.period }}
+                {{#link-to periodFilter.route (query-params type=type period=periodFilter.period ) }}
+                    {{ periodFilter.label }}
+                {{/link-to}}
+            {{/view}}
+
+        {{/each}}
+    </ul>
+
+    <div class="nav row">
+        <div class="small-6 columns">
+            <ul class="pager">
+                <li class="nav-arrow text-center">
+                    <a href="#" {{ action "previousDependent" }}>
+                        <i class="fa fa-angle-left fa-lg fa-fw"></i>
+                    </a>
+                </li>
+                <li class="select-title text-center"><span>{{ dependentInstance.name }}</span></li>
+                <li class="nav-arrow text-center">
+                    <a href="#" {{ action "nextDependent" }}>
+                        <i class="fa fa-angle-right fa-lg fa-fw"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="small-6 columns">
+
+            <ul class="pager">
+                <li class="nav-arrow text-center">
+                    <a href="#" {{ action "previousExpenseType"}}><i
+                            class="fa fa-angle-left fa-lg fa-fw"></i>
+                    </a>
+                </li>
+
+                <li class="select-title text-center"><span>{{ expenseTypeInstance.name }}</span></li>
+
+                <li class="nav-arrow text-center">
+
+                    <a href="#" {{ action "nextExpenseType"}}>
+                        <i class="fa fa-angle-right fa-lg fa-fw"></i>
+                    </a>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

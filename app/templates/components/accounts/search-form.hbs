@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="small-8 columns">
+        <div class="row collapse">
+            <div class="small-10 columns">
+                {{input type="text" placeholder=(carrier-type-account-label active-carrier-type "Find ") value=searchFilter }}
+
+            </div>
+            <div class="small-2 columns">
+                <a href="#" {{ action "filterSearch" }} class="button radius postfix"><i class="fa fa-search"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="small-4 columns">
+        <a href="#" {{ action "activateCamera" }} class="button round success expand scan-button"><i class="fa fa-camera fa-fw"></i> Scan</a>
+    </div>
+</div>
+<div class="row">
+    <div class="small-12 columns">
+        <div class="mb">
+            <h6 class="small subheader text-center">You can also take a photo of your insurance card and automatically add your plan and information.</h6>
+        </div>
+    </div>
+</div>

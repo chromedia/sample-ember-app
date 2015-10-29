@@ -1,0 +1,31 @@
+{{#app-canvas}}
+    <div class="inner-wrap">
+        <!-- OFF CANVAS MENU BAR -->
+        {{ top-navigation title="Choose Account Type"  leftWidget='accounts/controls/back-to-index' }}
+        <!-- END NAV.TAB-BAR HIDE-FOR-LARGE-UP -->
+
+        {{side-menu}}
+
+        <section class="main-section">
+            <div class="row mt mb">
+                <div class="small-12 columns">
+                    <ul class="account-type-list small-block-grid-2 mt">
+                        {{#each model.carrierTypes as |item|}}
+                            <li class="text-center">
+                                {{#link-to 'accounts.add' item.id class=""}}
+                                    {{ carrier-type-icon item.id }}
+                                    <h5>{{item.name}}</h5>
+                                {{/link-to}}
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        {{ bottom-navigation }}
+
+        <!-- CLOSE THE OFF-CANVAS MENU -->
+        <a class="exit-off-canvas"></a>
+    </div>
+{{/app-canvas}}

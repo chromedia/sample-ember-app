@@ -1,0 +1,19 @@
+body {
+	font-family: $base-font;
+	-webkit-font-smoothing: antialiased;
+	// -moz-osx-font-smoothing: grayscale;
+	color: rgba(0, 0, 0, $B-text);
+	text-rendering: optimizeLegibility;
+	background-color: #fbfbfb;
+	> .ember-view {
+		height: 100%;
+	}
+}
+
+body, .off-canvas-wrap, .inner-wrap {
+	height: 100%;
+}
+
+html {
+	font-size: 14px;
+}

@@ -1,0 +1,63 @@
+
+
+<section>
+    <div class="row">
+        <div class="small-10 small-offset-1 columns">
+            <div class="wrapper text-center">
+                <h1>Ember App</h1>
+            </div>
+
+            {{#each flashMessages.queue as |flash|}}
+                {{flash-message flash=flash messageStyle='foundation'}}
+            {{/each}}
+
+            <!-- login form -->
+            <form>
+                <div class="row">
+                    <div class="small-12 columns">
+
+                        {{# if hasError }}
+                            <label class="error">Email Address
+                                <small class="error">{{ errors.username }}</small>
+                                {{input type="email" id='username' placeholder='' value=username}}
+                            </label>
+                        {{ else }}
+                            <label>Email Address
+                                {{input type="email" id='username' placeholder='' value=username}}
+                            </label>
+                        {{/if}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-12 columns">
+                        {{# if hasError }}
+
+                            <label class="error">Password
+                                <small class="error">{{ errors.password }}</small>
+                                {{input id='password' type='password' value=password}}
+                            </label>
+                        {{ else }}
+                            <label>Password
+                                {{input id='password' type='password' value=password}}
+                            </label>
+                        {{/if}}
+
+                    </div>
+                </div>
+                <ul class="stack button-group mt">
+                    <li>
+                        {{#if loading}}
+                            <button type="button" class="button round expand">
+                                <i class="fa fa-circle-o-notch fa-spin"></i>
+                            </button>
+                        {{else}}
+                            <a href="#" {{ action 'login'}} class="button round expand">Log In</a>
+                        {{/if}}
+
+                    </li>
+                </ul>
+            </form>
+
+        </div>
+    </div>
+</section>

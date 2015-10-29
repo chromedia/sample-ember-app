@@ -1,0 +1,144 @@
+// /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+// 		Below this contains all the variable elements, mainly used for redundant values
+// /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+// ===============================================
+// Media Queries Declaration (_include-media.scss)
+// ===============================================
+
+// Creates a list of global breakpoints, you don't need to use them all just added most
+// / if not all sizes for digital resolutions.
+$breakpoints: (
+	'sm-phone': 20em, // 320
+	'phone': 30em, // 480
+	'lg-phone': 37.5em, // 600
+	'sm-tablet': 40em, // 640
+	'HD1': 45em, // 720
+	'tablet': 48em, // 768
+	'lg-tablet': 62em, // 992
+	'sm-desktop': 64em, // 1024
+	'HD2': 67.5em, // 1080
+	'desktop': 75em, // 1200
+	'lg-desktop': 80em, // 1280
+	'HD3': 90em, // 1440
+	'HD4': 120em, // 1920
+	'XHD1': 128em, // 2048
+) !default;
+
+// Creates a list of static expressions or media types
+$media-expressions: (
+	'all': 'all',
+	'screen': 'screen',
+	'print': 'print',
+	'handheld': 'handheld',
+	'retina2x': (
+		'(-webkit-min-device-pixel-ratio: 2)',
+		'(min-resolution: 192dpi)'
+	), 
+	'retina3x': (
+		'(-webkit-min-device-pixel-ratio: 3)',
+		'(min-resolution: 350dpi)'
+	)
+) !default;
+
+// Defines a number to be added or subtracted from each unit when declaring breakpoints with exclusive intervals
+// / @example scss - Interval for pixels is defined as `1` by default
+// /  @include media(">128px") {}
+// /
+// /  /* Generates: */
+// /  @media (min-width: 129px) {}
+$unit-intervals: (
+  'px': 1, 
+  'em': 0.01, 
+  'rem': 0.1
+) !default;
+
+// ================================
+// End of Media Queries Declaration
+// ================================
+
+
+// Color Theories and Explanation
+// ---------------------------------
+// / Hue										- Color
+// / Chroma									- Purity of a color (a high chroma has no added black, white or gray)
+// / Saturation							- How strong or weak a color (High Saturation is Strong)
+// / Value									- How light or dark a color is (light having a high value)
+// / Tones									- Adding gray to a color, making it duller than the original
+// / Shades									- Adding black to a color, making it darker than the original
+// / Tints									- Adding white to a color, making it lighter than the original
+// ---------------------------------
+// Default Colors
+// *========================= Warm Colors =========================*
+$red:							#FF0000 !default;		// Passion, Love, Anger
+$orange:						#FF7F00 !default;		// Energy, Happiness, Vitality
+$yellow:						#FFFF00 !default;		// Happiness, Hope, Deceit
+// *========================= Cool Colors =========================*
+$green:							#008000 !default;		// New Beginnings, Abundance, Nature
+$blue:							#343399 !default;		// Calm, Responsible, Sadness
+$purple:						#81007F !default;		// Creativity, Royalty, Wealth
+// *========================== Neutrals ===========================*
+$black:							#000000 !default;		// Mystery, Elegance, Evil
+$gray:							#808080 !default;		// Moody, Conservative, Formality
+$white:							#FFFFFF !default;		// Purity, Cleanliness, Virtue
+$brown:							#974B00 !default;		// Nature, Wholesomeness, Dependability
+$tan:							#D1B48C !default;		// Conservative, Piety, Dull (also Beige)
+$cream:							#FEFFF1 !default;		// Calm, Elegant, Purity (also Ivory)
+$beige:							$tan !default;
+$ivory:							$cream !default;
+// ---------------------------------
+// * Project Colors change accordingly
+$base-color:				#2A7EEB !default;		// the dominant color
+$support-color:				#1FA597 !default;		// the color that supports the base
+$accent-color:				#FD6F16 !default;		// the high contrast color
+
+$light-color:				#E27A3F !default;		// light/tinted color
+$dark-color:				#DF5A49 !default;		// dark/shaded color
+
+$facebook-color:			#3b5998 !default;
+$twitter-color:				#00aced !default;
+
+// ================================
+// End of Color Declaration
+// ================================
+
+// * Opacity change/add per project requirements | these defaults help with many elements on the project
+// * Text Opacity refers to the opacity of Black or White text in the project.
+// Black
+$B-hinttext:				0.26 !default;
+$B-subtext:					0.54 !default;
+$B-text:					0.87 !default;
+
+// White
+$W-hinttext:				0.30 !default;
+$W-subtext:					0.70 !default;
+$W-text:					1.00 !default;
+
+// * Text Colors I only change the opacity of text and stay in this defaults all the time.
+$text-white:				rgba($white, $W-text) !default;
+$text-black:				rgba($black, $B-text) !default;
+
+// * Element Opacity refers to the opacity of Black or White elements in the project
+// * these variables need to be changed/added per project, since they are relative to context
+// Black
+$B-dividers:				0.12 !default;
+$B-disabled:				0.26 !default;
+$B-icons:					0.54 !default;
+
+// White
+$W-dividers:				0.12 !default;
+$W-disabled:				0.30 !default;
+$W-icons:					1.00 !default;
+
+$base-font:					'Open Sans', "Helvetica Nueue", Helvetica, Arial, sans-serif;
+
+// * Default font Change per project requirements | just prepend, when you do try to make sure that they more or less look the same as the stack else just ignore these.
+// Macintosh fonts are small and lighter
+$Mac-serif:					Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif !default;
+$Mac-sans:					"Gill Sans", "Gill Sans MT", Calibri, sans-serif !default;
+$Mac-mono:					monaco, Consolas, "Lucida Console", monospace !default;
+
+// Windows are more thick and clear
+$Win-serif:					"Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif !default;
+$Win-sans:					"Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif !default;
+$Win-mono:					"Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace !default;

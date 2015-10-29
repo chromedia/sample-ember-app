@@ -1,0 +1,22 @@
+
+
+<div class="block-card-details small-12 columns">
+    <h6 class="small subheader text-uppercase">{{ insight.insightCategory.name }}</h6>
+    <h6 class="text-uppercase">{{ insight.title }}</h6>
+    <p>{{ insight.content }}</p>
+
+    {{#each insight.buttons as |trigger|}}
+        <a href="#" class="button small round {{ trigger.extraClass}}" {{ action trigger.action insight }}>
+            {{#if trigger.icon}}
+                <i class="fa {{trigger.icon}} fa-fw"></i>
+            {{/if}}
+            {{ trigger.label }}
+        </a>
+
+    {{/each}}
+
+    <!--<a data-reveal-id="bookModal" href="#" class="button small round">Book Me Now</a>-->
+    <!--<a href="#" class="button alert small round"><i class="fa fa-trash fa-fw"></i> Dismiss</a>-->
+
+
+</div>

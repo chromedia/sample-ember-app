@@ -1,0 +1,12 @@
+{{#if leftWidget }}
+    {{ view 'navigation/left-widget' templateName=leftWidget }}
+{{/if}}
+
+<section class="middle tab-bar-section text-center">
+    <h1 class="title">{{ title }}</h1>
+</section>
+
+{{#if rightWidget }}
+    {{ view 'navigation/right-widget' templateName=rightWidget }}
+{{/if}}
+

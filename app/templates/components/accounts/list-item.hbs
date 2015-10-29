@@ -1,0 +1,26 @@
+
+<div class="row" data-equalizer>
+    <div class="small-4 columns" data-equalizer-watch>
+        <div class="block-card-img">
+            <img src="assets/default-img.png">
+        </div>
+    </div>
+    <div class="block-card-details small-5 columns" data-equalizer-watch>
+
+        <ul class="main-list">
+            <li class="b-title">{{ carrier_name }}</li>
+            {{#if isInsurance }}
+                <li>{{ plan_type }}</li>
+                <li>Group: {{ group_number }}</li>
+            {{ else }}
+                <li>Username: {{ carrier.account_username }}</li>
+            {{/if}}
+
+        </ul>
+    </div>
+    <div class="small-3 columns table" data-equalizer-watch>
+        <div class="table-cell text-center">
+            <a href="#" {{ action "showConfirmationModal" carrier }}class="subtle-link"><i class="fa fa-remove fa-fw"></i></a>
+        </div>
+    </div>
+</div>

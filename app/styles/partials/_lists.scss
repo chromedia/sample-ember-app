@@ -1,0 +1,23 @@
+.blocked-list {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	> li {
+		position: relative;
+		border-bottom: 1px solid rgba(0, 0, 0, $B-dividers);
+		background-color: $white;
+		&:first-child {
+			border-top: 1px solid rgba(0, 0, 0, $B-dividers);
+		}
+		> a {
+			color: rgba(0, 0, 0, $B-text);
+			display: block;
+			padding: 0.9375rem 1rem;
+			overflow: hidden;
+			line-height: 1.6em;
+			> .fa {
+				margin-top: 5px;
+			}
+		}
+	}
+}

@@ -1,0 +1,9 @@
+@mixin clear-layout {
+	margin: 0;
+	padding: 0;
+}
+
+@mixin set-square-box ($value : 15px) {
+	height: $value;
+	width: $value;
+}

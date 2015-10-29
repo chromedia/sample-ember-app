@@ -1,0 +1,35 @@
+.panel {
+	background-color: $white;
+	border-radius: 3px;
+	box-shadow: 0 3px 8px -4px rgba(0, 0, 0, 0.15);
+	border: 1px solid rgba($text-black, 0.1);
+	h1, h2, h3, h4, h5, h6 {
+		margin-bottom: 1rem;
+	}
+	.panel-heading {
+		margin-top: 0;
+		margin-bottom: 2rem;
+	}
+}
+
+.grid {
+	background: transparent;
+	border: none;
+	> .row {
+		border-bottom: 1px solid rgba(0, 0, 0, $B-dividers);
+		> .columns {
+			padding-top: 0.9375rem;
+			padding-bottom: 0.9375rem;
+			overflow: hidden;
+			&:nth-child(odd) {
+				border-right: 1px solid rgba(0, 0, 0, $B-dividers);
+			}
+			.button {
+				margin-bottom: 0;
+			}
+		}
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+}

@@ -1,0 +1,36 @@
+{{#app-canvas}}
+    <div class="inner-wrap">
+        <!-- OFF CANVAS MENU BAR -->
+        {{ top-navigation title="Overview" leftWidget="controls/side-menu-trigger"  }}
+        <!-- END NAV.TAB-BAR HIDE-FOR-LARGE-UP -->
+
+        {{side-menu}}
+
+        <section class="main-section">
+
+            <div class="row">
+                <div class="small-10 small-offset-1 columns">
+                    <div class="tall-wrapper text-center">
+                        <h4>Oops! No accounts added yet.</h4>
+                        <h6 class="subheader">Hey {{ model.user.greetingsName }}, we can't tell you much without some accounts added to Ember App.</h6>
+                    </div>
+                    <ul class="stack button-group">
+                        <li>
+                            {{#link-to "accounts.types" class="button round"}}
+                                Add Your First Account
+                            {{/link-to}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+        {{ bottom-navigation }}
+
+        <!-- CLOSE THE OFF-CANVAS MENU -->
+        <a class="exit-off-canvas"></a>
+    </div>
+
+    {{ modals/close-overview-tour action="disableOverviewTour" }}
+{{/app-canvas}}

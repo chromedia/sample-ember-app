@@ -1,0 +1,28 @@
+h1, h2, h3, h4, h5, h6 {
+	font-family: $base-font;
+	color: rgba(0, 0, 0, $B-text);
+	font-weight: 600;
+	margin-bottom: 1rem;
+}
+
+.indent {
+	padding: 0 1rem;
+}
+
+.small {
+	font-size: 0.75rem;
+}
+
+.subtle {
+	color: rgba(0, 0, 0, $B-subtext);
+}
+
+.subheader {
+	color: rgba(0, 0, 0, $B-subtext) !important;
+}
+
+.tab-bar {
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: normal;
+	}
+}

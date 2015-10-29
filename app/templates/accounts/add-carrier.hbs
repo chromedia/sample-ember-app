@@ -1,0 +1,24 @@
+{{#app-canvas}}
+    <div class="inner-wrap">
+        <!-- OFF CANVAS MENU BAR -->
+        {{ top-navigation title=title leftWidget='accounts/controls/back-to-add' carrier_type=model.type.id }}
+        <!-- END NAV.TAB-BAR HIDE-FOR-LARGE-UP -->
+
+        {{side-menu}}
+
+        <section class="main-section">
+            <div class="row mt">
+                <div class="small-12 columns">
+                    <!-- Add carrier form -->
+                    {{ accounts/add-carrier-form carrier=model isInsurance=isInsurance carrier_id=model.id carrier_type=model.type.id carrier_name=model.name action="persistCarrier" }}
+                </div>
+            </div>
+        </section>
+
+
+        {{ bottom-navigation }}
+
+        <!-- CLOSE THE OFF-CANVAS MENU -->
+        <a class="exit-off-canvas"></a>
+    </div>
+{{/app-canvas}}

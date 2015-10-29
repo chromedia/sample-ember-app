@@ -1,0 +1,35 @@
+<ul class="list-view">
+    {{#each claim in filteredContent }}
+    <li class="list-view-cell">
+        <div class="row">
+            <div class="small-7 columns">
+                <h6 class="small subheader text-uppercase">{{ claim.formattedDate}}</h6>
+                <h6>{{ claim.vendor.name }}</h6>
+                <p class="small subheader text-uppercase gapped-elements"><span>{{ claim.dependent.name }}</span><span>{{ claim.expenseType.name }}</span></p>
+            </div>
+            <div class="small-5 columns">
+                <ul class="table">
+                    <li class="table-cell text-right {{ cashOutCellClass }}">${{ currency-format claim.cashOut }}</li>
+                    <li class="table-cell text-right {{ planPaidCellClass }}">${{ currency-format claim.planPaid }}</li>
+                </ul>
+            </div>
+        </div>
+    </li>
+    {{/each}}
+
+    <!-- total row -->
+    <li class="list-view-cell">
+        <div class="row">
+            <div class="small-7 columns">
+                <span class="icon transparent"></span>
+                <h5 class="title text-uppercase">Total</h5>
+            </div>
+            <div class="small-5 columns">
+                <ul class="table">
+                    <li class="table-cell text-right {{ cashOutCellClass }}">${{currency-format totalCashOut }}</li>
+                    <li class="table-cell text-right {{ planPaidCellClass }}">${{currency-format totalPlanPaid }}</li>
+                </ul>
+            </div>
+        </div>
+    </li>
+</ul>

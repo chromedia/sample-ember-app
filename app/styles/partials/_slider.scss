@@ -1,0 +1,34 @@
+.range-slider {
+	margin: 0;
+	&.time {
+		border: none;
+		background: transparent;
+		.range-slider-handle {
+			width: 0.05rem;
+			height: 1.5rem;
+			background-color: $accent-color;
+			top: 1rem;
+			&:before {
+				content: 'Today';
+				position: absolute;
+				top: -1.5rem;
+				left: -1.25rem;
+				text-transform: uppercase;
+				font-size: 0.875rem;
+			}
+		}
+		.range-slider-active-segment {
+			background: transparent;
+		}
+	}
+	&.value {
+		margin-top: 0.2rem;
+		border-radius: 4px;
+		.range-slider-handle {
+			visibility: hidden;
+		}
+		.range-slider-active-segment {
+			background-color: $support-color;
+		}
+	}
+}
