@@ -1,0 +1,33 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+#
+.DS_STORE
+
+markup/config.codekit
+
+# compiled output
+/www
+/tmp
+
+# dependencies
+/node_modules
+/bower_components
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log
+testem.log
+
+# phonegap generated
+/platforms
+/plugins
+
+#jetbrains
+/.idea
+
+#eclipse
+/.project
+/.workspace
